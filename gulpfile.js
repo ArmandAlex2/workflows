@@ -17,7 +17,7 @@ var sassSources = ['components/sass/style.scss'];
 
 gulp.task('coffee', function() {
   gulp.src(coffeeSources)
-    .pipe(coffee({bare: true})
+    .pipe(coffee({ bare: true })
     .on('error', gutil.log))
     .pipe(gulp.dest('components/scripts'))
 });
@@ -36,8 +36,8 @@ gulp.task('compass', function() {
       sass: 'components/sass',
       image: 'builds/development/images',
       style: 'expanded'
-    }))
-    .on('error', gutil.log)
+    })
+    .on('error', gutil.log))
     .pipe(gulp.dest('builds/development/css'))
     .pipe(connect.reload())
 });
@@ -50,7 +50,7 @@ gulp.task('watch', function() {
 
 gulp.task('connect', function() {
   connect.server({
-    root: 'bulds/development/',
+    root: 'builds/development/',
     livereload: true
   });
 });
